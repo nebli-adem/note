@@ -1,0 +1,13 @@
+services:
+  server:
+    build: .
+    environment:
+      - PGUSER=postgres
+      - PGPASSWORD=nebli
+      - PGHOST=host.docker.internal
+      - PGDATABASE=gestion
+      - PGPORT=5432
+      - JWT_SECRET=secret
+    ports:
+      - "3000:3000"
+    command: node server.js
